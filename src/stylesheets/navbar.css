@@ -1,0 +1,12 @@
+nav {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+p.brand-logo {
+    padding-left: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+}
