@@ -14,7 +14,6 @@ const MemeDiv = () => {
 
 	const getRandomInt = (max) => {
 		const value = Math.floor(Math.random() * max);
-		console.log(value);
 		return value;
 	};
 
@@ -32,13 +31,11 @@ const MemeDiv = () => {
 		if (memes.length) {
 			const randomMeme = getRandomInt(memes.length);
 			setSelectedMeme(memes[randomMeme]);
-			console.log(randomMeme);
 		}
 	}, [memes, changeMeme]);
 
 	const handleMemeChange = (e) => {
 		setChangeMeme(!changeMeme);
-		console.log(changeMeme);
 	};
 
 	const handleChange = (e) => {
