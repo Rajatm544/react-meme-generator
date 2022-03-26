@@ -5,18 +5,14 @@ import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs';
 
 const MemeDiv = () => {
-	const [memes, setMemes] = useState([]);
-	const [selectedMeme, setSelectedMeme] = useState({});
-	const [changeMeme, setChangeMeme] = useState(true);
+	const [memes, setMemes] = useState([]); // for storing API response
+	const [selectedMeme, setSelectedMeme] = useState({}); // for storing the randomly selected meme
+	const [changeMeme, setChangeMeme] = useState(true); // To pick another meme
 	const [topText, setTopText] = useState('');
 	const [bottomText, setBottomText] = useState('');
 	const [selectedColor, setSelectedColor] = useState('white');
 
-	const getRandomInt = (max) => {
-		const value = Math.floor(Math.random() * max);
-		return value;
-	};
-
+	// fetch meme images on page load and until memes state array is filled
 	useEffect(() => {
 		if (!memes.length) {
 			axios.get('https://api.imgflip.com/get_memes').then((result) => {
@@ -27,6 +23,7 @@ const MemeDiv = () => {
 		}
 	}, [memes]);
 
+	// randomly select one of the memes from state array
 	useEffect(() => {
 		if (memes.length) {
 			const randomMeme = getRandomInt(memes.length);
@@ -34,15 +31,24 @@ const MemeDiv = () => {
 		}
 	}, [memes, changeMeme]);
 
+	// function to get random interger between 0 to max
+	const getRandomInt = (max) => {
+		const value = Math.floor(Math.random() * max);
+		return value;
+	};
+
+	// update state to trigger re-render with new meme image
 	const handleMemeChange = (e) => {
 		setChangeMeme(!changeMeme);
 	};
 
+	// handle form inputs
 	const handleChange = (e) => {
 		if (e.target.name === 'top_text') setTopText(e.target.value);
 		else setBottomText(e.target.value);
 	};
 
+	// use html-to-image to donwload the meme div as png
 	const handleDownload = (e) => {
 		htmlToImage
 			.toPng(document.getElementById('meme-download'))
@@ -51,6 +57,7 @@ const MemeDiv = () => {
 			});
 	};
 
+	// change text color based on color picker
 	const handleColor = (e) => {
 		const color = e.target.className.split(' ')[2];
 		setSelectedColor(color);
@@ -75,6 +82,8 @@ const MemeDiv = () => {
 					{bottomText}
 				</h4>
 			</div>
+
+			{/* display a color picker with 5 color options */}
 			<div className='color-picker'>
 				<button
 					onClick={handleColor}
@@ -132,6 +141,8 @@ const MemeDiv = () => {
 					}
 					className='color waves-effect yellow'></button>
 			</div>
+
+			{/* show 2 input fields */}
 			<form>
 				<div className='row'>
 					<div className='input-field'>
@@ -158,6 +169,8 @@ const MemeDiv = () => {
 					</div>
 				</div>
 			</form>
+
+			{/* buttons for changing meme and downloading the file */}
 			<div className='button-container'>
 				<button
 					onClick={handleMemeChange}
