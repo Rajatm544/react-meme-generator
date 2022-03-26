@@ -25,6 +25,7 @@ _P.S: Do star this repo after you fork it :)_
 ## Demo
 
 The app has been hosted on Netlify [here](https://rajat-memegenerator.netlify.app/).
+A video demo for the app can be found at <https://youtu.be/786s3io7nCs>
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/42696800/160225457-38136c09-46af-4ef8-a77b-bb91e6f46ec2.png" alt="home page" width="534" height="300" />
