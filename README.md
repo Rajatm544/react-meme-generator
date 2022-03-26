@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+<h1 align="center">
+<img src="https://user-images.githubusercontent.com/42696800/160224794-a3f0e445-164a-45ec-92ac-7d41b5120984.png" alt="logo" width="30" height="30" />
+Meme Generator
+<p align='center'>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src='https://img.shields.io/github/last-commit/Rajatm544/react-meme-generator' alt='last commit'>
+<img src='https://img.shields.io/website?down_message=Down&up_message=Up&url=https%3A%2F%2Fkosells.herokuapp.com%2F' alt='website'>
+<img src='https://img.shields.io/maintenance/yes/2022'
+<img src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat' alt='maintained'>
+</p>
+ 
+</h1>
+An app to generate memes! Choose where to place your text and generate the perfect meme for every situation. Hit the download button after you're done adding text and share it around. The app is built using React.js and Materilize CSS
+<br/>
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+- Fork this repo and run the `git clone <forked repo>` command from your terminal/bash.
+- Run `npm install`
+- Run `npm start` to run locally
+- Run `npm run build` to get the static folder for deploying the app on Netlify
 
-### `npm start`
+_P.S: Do star this repo after you fork it :)_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The app has been hosted on Netlify [here](https://kosells.herokuapp.com/).
 
-### `npm test`
+<div align="center">
+<img src="https://user-images.githubusercontent.com/42696800/160225457-38136c09-46af-4ef8-a77b-bb91e6f46ec2.png" alt="home page" width="534" height="300" />
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Info
 
-### `npm run build`
+- The app is built using React hooks and Materialize CSS as part of the **dunnhumby's Code Combat 3.0 (React)** challenge on Techgig.
+- The api used to fetch the memes is <https://api.imgflip.com/get_memes>
+- [Favicon.io](https://favicon.io/) and [Flaticon](https://www.flaticon.com/) are used to obtain and add the favicons
+- The app has 2 input fields to add the top and bottom texts.
+- The [html-to-image](https://www.npmjs.com/package/html-to-image) package is used to convert the HTML div into a png file.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## A Few Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There were a few challenges that came up during the development of the application. In this section, I aim to clarify my approach in overcoming these challeges, as a way to help you understand the code better!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Fetching meme images without server side code
 
-### `npm run eject`
+- As explained earlier, the API endpoint provides 100 meme responses, and one of these is selected at random each time
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Capturing meme as downloadable file
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The html-to-image npm package allows the users specify which part of the document.body to download as an image file
+- This supports several image file types, but this app downloads only .png files
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Text color picker 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Not all memes have the same background! So change your text color using the color picker
+- The options are button elements with Materialize Css classNames to provide functionality
 
-## Learn More
+### Easy to place text at top or bottom
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Use one or both input fields to control the text placement.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Any more suggestions are always welcome in the PRs!
 
-### Code Splitting
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Some of the technologies used in the development of this web application are as follow:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [React.js](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [Materialize CSS](https://materializecss.com/):  A modern responsive front-end framework based on Material Design
+- [html-to-image](https://www.npmjs.com/package/html-to-image): Generates an image from a DOM node using HTML5 canvas and SVG.
