@@ -24,7 +24,7 @@ _P.S: Do star this repo after you fork it :)_
 
 ## Demo
 
-The app has been hosted on Netlify [here](https://kosells.herokuapp.com/).
+The app has been hosted on Netlify [here](https://rajat-memegenerator.netlify.app/).
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/42696800/160225457-38136c09-46af-4ef8-a77b-bb91e6f46ec2.png" alt="home page" width="534" height="300" />
