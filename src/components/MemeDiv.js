@@ -46,7 +46,7 @@ const MemeDiv = () => {
 	const handleDownload = (e) => {
 		htmlToImage
 			.toPng(document.getElementById('meme-download'))
-			.then(function (dataUrl) {
+			.then((dataUrl) => {
 				download(dataUrl, `${selectedMeme.name}.png`);
 			});
 	};
